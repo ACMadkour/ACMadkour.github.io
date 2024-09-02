@@ -103,16 +103,16 @@ nav ul li a.cta {
     top: 100px; /* Adjust this value to position the logo vertically */
     left: 45px; /* Adjust this value to position the logo horizontally */
     z-index: 10; /* Ensure the logo stays on top of the background */
-    width: 400px;
+    width: 300px;
     height: auto;
 }
 
 .marketing-copy {
     position: absolute;
-    top: 400px; /* Adjust to position below the logo */
+    top: 340px; /* Adjust to position below the logo */
     left: 45px; /* Align with the logo */
-    width: 400px; /* Adjust based on the space available */
-    font-size: 36px;
+    width: 300px; /* Adjust based on the space available */
+    font-size: 24px;
     color: #333;
     z-index: 10; /* Ensure it stays above the background */
     max-width: 400px; /* Limit width for readability */
@@ -120,7 +120,7 @@ nav ul li a.cta {
 
 .cta-group {
     position: absolute;
-    top: 640px; /* Adjust this to be just below the marketing copy */
+    top: 460px; /* Adjust this to be just below the marketing copy */
     left: 45px; /* Align with the logo and marketing copy */
     z-index: 10; /* Ensure the buttons are above the background */
 }
@@ -130,7 +130,7 @@ nav ul li a.cta {
     color: #fff;
     padding: 15px 30px;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 0.85em;
     text-decoration: none;
     margin-right: 10px;
     display: inline-block;
@@ -158,11 +158,11 @@ nav ul li a.cta {
     flex-direction: column; /* Stack icon and text vertically */
     align-items: center; /* Center align icon and text */
     text-align: center; /* Ensure text is centered */
-    width: 20%; /* Control width of each feature block */
+    width: 17%; /* Control width of each feature block */
 }
 
 .feature img {
-    width: 220px; /* Set the width of each icon */
+    width: 120px; /* Set the width of each icon */
     height: auto; /* Set the height of each icon */
     margin-bottom: 10px; /* Space between icon and text */
 }
