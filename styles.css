@@ -120,7 +120,7 @@ nav ul li a.cta {
 
 .cta-group {
     position: absolute;
-    top: 480px; /* Adjust this to be just below the marketing copy */
+    top: 500px; /* Adjust this to be just below the marketing copy */
     left: 40px; /* Align with the logo and marketing copy */
     z-index: 10; /* Ensure the buttons are above the background */
 }
