@@ -25,18 +25,20 @@
     <div class="marketing-copy">
         Engage. Learn. Create. Harness the power of AI to unlock personalized educational conversations.
     </div>
-    <!--<div class="cta-group">
+    <div class="cta-group">
         <a href="#" class="cta">Learn More</a>
         <a href="#" class="cta secondary">Get Started</a>
-    </div>-->
+    </div>
+    <div class="hero-content">
 
+    </div>
 </section>
 
 <section class="features">
     <div class="feature">
         <img src="icon - interactive learning.webp" height="1024" width="1024"/>
         <h3>Interactive Learning Experience</h3>
-        <p>Learners to engage in free-form, interactive educational conversations that adapts to your individual needs and pace.</p>
+        <p>Learners engage in free-form, interactive educational conversations that adapts to your specific needs and pace.</p>
     </div>
     <div class="feature">
         <img src="icon - ai course creation.webp" height="1024" width="1024"/>
@@ -45,7 +47,7 @@
     </div>
     <div class="feature">
         <img src="icon - comprehensive library.webp" height="1024" width="1024"/>
-        <h3>Comprehensive Library of Course Content</h3>
+        <h3>Comprehensive Course Library</h3>
         <p>An extensive and ever-growing library of personal improvement and life-enhancing courses.</p>
     </div>
     <div class="feature">
@@ -56,7 +58,7 @@
     <div class="feature">
         <img src="icon - collaboration.webp" height="1024" width="1024"/>
         <h3>Community & Collaboration</h3>
-        <p>Join a robusts community of learners and educators to collaborate, share knowledge, and support each other on your learning journeys.</p>
+        <p>Join a robust community of learners and educators to collaborate, share knowledge, and support each other on your learning journeys.</p>
     </div>
     <div class="feature">
         <img src="icon - data driven insights.webp" height="1024" width="1024"/>
