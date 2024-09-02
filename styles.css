@@ -43,7 +43,7 @@ nav ul li a.cta {
 }
 
 .hero {
-    background-image: url('background 3.webp'); /* Replace with the path to your image */
+    background-image: url('background 3.png'); /* Replace with the path to your image */
     background-size: cover; /* Ensure the background covers the hero section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
