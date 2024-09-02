@@ -29,9 +29,7 @@
         <a href="#" class="cta">Learn More</a>
         <a href="#" class="cta secondary">Get Started</a>
     </div>
-    <div class="hero-content">
 
-    </div>
 </section>
 
 <section class="features">
