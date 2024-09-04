@@ -53,12 +53,12 @@
     <div class="feature">
         <img src="icon - seamless integration.webp" height="1024" width="1024"/>
         <h3>Learn from Anywhere, Anytime.</h3>
-        <!--p>Access from anywhere with your web browser or mobile device.</p--
+        <!--p>Access from anywhere with your web browser or mobile device.</p-->
     </div>
     <div class="feature">
         <img src="icon - collaboration.webp" height="1024" width="1024"/>
         <h3>Community & Collaboration</h3>
-         <!--p>Join a robust community of learners and educators to collaborate, share knowledge, and support each other on your learning journeys.</p-->
+        <!--p>Join a robust community of learners and educators to collaborate, share knowledge, and support each other on your learning journeys.</p-->
     </div>
     <div class="feature">
         <img src="icon - data driven insights.webp" height="1024" width="1024"/>
