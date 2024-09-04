@@ -110,9 +110,9 @@ nav ul li a.cta {
 .marketing-copy {
     position: absolute;
     top: 340px; /* Adjust to position below the logo */
-    left: 45px; /* Align with the logo */
+    left: 65px; /* Align with the logo */
     width: 300px; /* Adjust based on the space available */
-    font-size: 24px;
+    font-size: 32px;
     color: #333;
     z-index: 10; /* Ensure it stays above the background */
     max-width: 400px; /* Limit width for readability */
