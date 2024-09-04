@@ -165,6 +165,7 @@ nav ul li a.cta {
     width: 120px; /* Set the width of each icon */
     height: auto; /* Set the height of each icon */
     margin-bottom: 10px; /* Space between icon and text */
+    border-radius: 15px; /* Add rounded corners, adjust this value for more/less rounding */
 }
 
 .feature h3 {
