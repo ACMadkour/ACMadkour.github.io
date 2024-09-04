@@ -23,7 +23,7 @@
 <section class="hero">
     <img src="EverGuide Logo new transp.png" height="471" width="700" alt="Company Logo" class="logo"/>
     <div class="marketing-copy">
-        Engage. Learn. Create. <--Harness the power of AI to unlock personalized educational conversations.-->
+        Engage. Learn. Create. <!--Harness the power of AI to unlock personalized educational conversations.-->
     </div>
     <div class="cta-group">
         <a href="#" class="cta">Learn More</a>
