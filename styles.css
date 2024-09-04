@@ -8,7 +8,11 @@ body {
 
 header {
     background-color: #ffffff;
-    padding: 20px 50px;
+    padding: 0 50px;
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Vertically centers the content */
+    justify-content: space-around; /* Distributes items evenly with space between them */
+    height: 60px; /* Set a fixed height for the header */
     position: fixed;
     top: 0;
     width: 100%;
@@ -19,13 +23,14 @@ header {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Space items evenly within the nav */
+    width: 100%; /* Distribute the menu items across the full width of the header */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 100px; /* Add some margin to space out the menu items */
 }
 
 nav ul li a {
