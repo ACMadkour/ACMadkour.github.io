@@ -41,7 +41,16 @@
             <!-- Main Content (Logo, Slogan, etc.) -->
             <div class="hero-content">
                 <img src="images/hero logo.png" alt="Hero Logo" class="hero-logo">
-                <img src="images/slogan.png" alt="Learn Engage Inspire Slogan" class="slogan-img">
+<!--                <img src="images/slogan.png" alt="Learn Engage Inspire Slogan" class="slogan-img">-->
+                <img src="images/slogan.png" alt="Slogan Image" class="slogan-img" usemap="#sloganMap">
+
+                <map name="sloganMap">
+                    <!-- Define areas for each section of the image -->
+                    <area shape="rect" coords="0,0,150,150" href="page1.html" alt="Learn">
+                    <area shape="rect" coords="151,0,300,150" href="page2.html" alt="Engage">
+                    <area shape="rect" coords="301,0,450,150" href="page3.html" alt="Inspire">
+                </map>
+
             </div>
         </div>
     </section>
