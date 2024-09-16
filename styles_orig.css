@@ -1,0 +1,217 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
+    padding: 20px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px; /* Adds a little padding to the right side */
+    width: 100%;
+}
+
+.logo {
+    display: flex; /* Ensures the image and text are aligned horizontally */
+    align-items: center; /* Vertically centers the image and text */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 30px;
+}
+
+.logo-img {
+    width: 50px; /* Adjust the width of the logo as needed */
+    height: auto;
+    margin-right: 10px; /* Adds space between the logo and the text */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px; /* Adds extra padding between links and the edge */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.cta {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-right: 70px; /* Adds padding between the button and the right edge */
+}
+
+.cta.secondary {
+    background-color: #333;
+}
+
+.hero {
+    background-image: url('images/background 1.png');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Keeps the image centered */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Makes the hero section take up the full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff; /* Ensures text is readable on top of the background */
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-logo {
+    width: 450px; /* Your chosen logo width */
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: -130px; /* Adjust for proper positioning */
+}
+
+.slogan-img {
+    width: 450px; /* Adjust the width based on your design */
+    height: auto;
+    margin-bottom: 20px; /* Space between the slogan image and paragraph */
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+
+.hero-content h1 {
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    font-size: 48px; /* Adjust this size as needed */
+    color: #333333; /* Dark gray for the slogan */
+    text-align: center; /* Center-align the slogan */
+    margin: 0;
+
+}
+
+
+/* Featured Courses */
+.featured-courses {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.course-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-item {
+    width: 30%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.course-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.course-item h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #f0f0f0;
+}
+
+.step-by-step {
+    display: flex;
+    justify-content: space-around;
+}
+
+.step {
+    text-align: center;
+    width: 30%;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.testimonials-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonial {
+    width: 40%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.pricing-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan {
+    width: 30%;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
