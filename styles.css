@@ -140,6 +140,7 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
     height: 100vh; /* Full viewport height */
     width: 100vw; /* Full viewport width */
     padding-left: 30px;
@@ -204,7 +205,7 @@ header {
 .hero-logo {
     width: 450px;
     height: auto;
-    margin-top: 200px;
+    margin-top: 150px;
     margin-bottom: 90px;
 }
 
@@ -212,6 +213,63 @@ header {
     width: 450px;
     height: auto;
 }
+
+.carousel-container {
+    position: absolute;
+    bottom: -250px; /* Set this value to move the carousel closer to the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    max-width: 600px; /* Set a max-width for the carousel */
+    width: 100%; /* This ensures it adjusts to different screen sizes */
+    margin: 0 auto; /* Centers the carousel horizontally */
+    overflow: hidden;
+    padding: 20px; /* Optional: Padding to give some space inside the carousel */
+    border-radius: 10px; /* Optional: Round the corners */
+}
+
+
+.carousel-img {
+    width: 100%;
+    max-width: 300px; /* Ensures the image doesn't get too large */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 10px; /* Adds slight rounding to the corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.6); /* White background with 80% opacity */
+
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.carousel-text {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.carousel-link {
+    font-size: 1.2em;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.carousel-link:hover {
+    text-decoration: underline;
+}
+
 
 /* Featured Courses Section */
 .featured-courses {
