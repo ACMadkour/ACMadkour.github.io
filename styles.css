@@ -71,69 +71,6 @@ header {
     background-color: #333;
 }
 
-
-/*!* Hero Section *!*/
-/*.hero-container {*/
-/*    display: flex;*/
-/*    justify-content: space-between; !* Aligns the features and main content *!*/
-/*    align-items: center;*/
-/*    height: 100vh; !* Full viewport height *!*/
-/*    width: 100vw; !* Full width of the viewport *!*/
-/*    padding: 20px;*/
-/*    background-image: url('images/background 1.png'); !* Replace with your background *!*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*}*/
-
-/*.features-list {*/
-/*    width: 30%; !* Left side width for features *!*/
-/*    padding: 20px;*/
-/*    text-align: left;*/
-/*}*/
-
-/*.features-list ul {*/
-/*    list-style-type: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*}*/
-
-/*.features-list li {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-/*.features-list a {*/
-/*    text-decoration: none;*/
-/*    color: #007BFF;*/
-/*    font-weight: bold;*/
-/*    font-size: 1.2em;*/
-/*}*/
-
-/*.features-list a:hover {*/
-/*    text-decoration: underline;*/
-/*}*/
-
-/*.hero-content {*/
-/*    !*width: 70%; !* Right side width for main content *!*!*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center; !* Center content vertically *!*/
-/*    align-items: center; !* Center content horizontally *!*/
-/*    text-align: center;*/
-/*    !*height: 100%;*!*/
-/*}*/
-
-/*.hero-logo {*/
-/*    width: 400px;*/
-/*    height: auto;*/
-/*    margin-top: -200px; !* Adjust for proper positioning *!*/
-/*    margin-bottom: 50px;*/
-/*}*/
-
-/*.slogan-img {*/
-/*    width: 600px;*/
-/*    height: auto;*/
-/*    margin-bottom: 20px;*/
-/*}*/
 /* Hero Section */
 .hero {
     position: relative;
@@ -569,4 +506,19 @@ footer {
     margin-top: 20px;
     font-size: 0.9em;
 }
+
+.footnotes {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.footnotes ol {
+    padding-left: 20px;
+}
+
+.footnotes li {
+    font-size: 0.9em;
+}
+
 
