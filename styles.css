@@ -239,11 +239,10 @@ header {
 }
 
 .carousel-slide {
-    display: none;
+    /*display: none;*/
     text-align: center;
     padding: 20px;
     background-color: rgba(249, 249, 249, 0.6); /* White background with 80% opacity */
-
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
