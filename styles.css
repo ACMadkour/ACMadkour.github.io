@@ -1,18 +1,25 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
 }
 
-header {
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    padding-top: 90px;
+}
+
+/* Header styles */
+.header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 20px 50px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -21,13 +28,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 30px; /* Adds a little padding to the right side */
+    padding-right: 30px;
     width: 100%;
 }
 
-.logo {
-    display: flex; /* Ensures the image and text are aligned horizontally */
-    align-items: center; /* Vertically centers the image and text */
+.navbar__logo {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -35,301 +42,281 @@ header {
     margin-left: 30px;
 }
 
-.logo-img {
-    width: 50px; /* Adjust the width of the logo as needed */
+.navbar__logo-img {
+    width: 50px;
     height: auto;
-    margin-right: 10px; /* Adds space between the logo and the text */
+    margin-right: 10px;
 }
 
-
-.nav-links {
+.navbar__links {
     list-style: none;
     display: flex;
-    padding-right: 30px; /* Adds extra padding between links and the edge */
+    padding-right: 30px;
 }
 
-.nav-links li {
+.navbar__link {
     margin-left: 20px;
 }
 
-.nav-links a {
+.navbar__link a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
 
-.cta {
+.navbar__cta {
     background-color: #007BFF;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-transform: uppercase;
-    margin-right: 70px; /* Adds padding between the button and the right edge */
+    margin-right: 70px;
 }
 
-.cta.secondary {
+.navbar__cta--secondary {
     background-color: #333;
 }
 
-/* Hero Section */
+/* Hero section styles */
 .hero {
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: column;
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    padding-left: 30px;
-    background-image: url('images/background 1.png'); /* Replace with your background */
+    flex-direction: row;
+    /*height: 100vh;*/
+    /*min-height: calc(100vh - 90px);  !* Subtract header height from 100vh *!*/
+    width: 100vw;
+    padding: 50px 0;
+    background-image: url('images/background 1.png');
     background-size: cover;
     background-position: bottom;
+    /*border: 2px solid red;*/
 }
 
-.features-list {
-    /*top: 120px; !* Sticks to 20px from the top of the window when scrolling *!*/
-    width: 80%; /* Adjust based on your layout */
-    padding-top: 40px;
+.hero__features-list {
+    width: 22.5%;
+    /*padding-top: 3%;*/
+    padding-left: 1%;
     text-align: left;
-    /*margin-top: 200px;*/
-    transform: translate(20%, 20%); /* Centers content horizontally and vertically */
-
 }
 
-.features-list ul {
+.hero__features-list ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
-.features-list li {
+.hero__features-item {
     display: flex;
-    align-items: center; /* Align icon and text horizontally */
+    align-items: center;
     margin-bottom: 20px;
 }
 
-.features-list li img {
-    width: 70px; /* Adjust icon size */
+.hero__features-icon {
+    width: 70px;
     height: auto;
-    margin-right: 10px; /* Space between icon and text */
-    border-radius: 50%; /* This makes the image completely round */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.features-list a {
+.hero__features-link {
     text-decoration: none;
-    color: #333333; /* Dark gray color */
+    color: #333333;
     font-weight: bold;
     font-size: 1.0em;
 }
 
-.features-list a:hover {
+.hero__features-link:hover {
     text-decoration: underline;
-    color: #0056b3; /* Optional: Change color on hover */
+    color: #0056b3;
 }
 
-
-.hero-content {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -65%); /* Centers content horizontally and vertically */
-    text-align: center;
+.hero__content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /*margin-bottom: 50px;*/
+    width: 58.5%;
 }
 
-.hero-logo {
-    width: 450px;
-    height: auto;
-    margin-top: 150px;
-    margin-bottom: 90px;
-}
-
-.slogan-img {
-    width: 450px;
-    height: auto;
-}
-
-.carousel-container {
-    position: fixed;
-    bottom: -250px; /* Set this value to move the carousel closer to the bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    max-width: 600px; /* Set a max-width for the carousel */
-    width: 100%; /* This ensures it adjusts to different screen sizes */
-    margin: 0 auto; /* Centers the carousel horizontally */
-    overflow: hidden;
-    padding: 20px; /* Optional: Padding to give some space inside the carousel */
-    border-radius: 10px; /* Optional: Round the corners */
-}
-
-
-.carousel-img {
-    width: 100%;
-    max-width: 300px; /* Ensures the image doesn't get too large */
-    height: auto; /* Maintain aspect ratio */
+.hero__logo {
     display: block;
-    margin: 0 auto; /* Centers the image horizontally */
-    border-radius: 10px; /* Adds slight rounding to the corners for a modern look. */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 450px;
+    height: auto;
+    /*margin: 3% auto 0;*/
 }
 
-.carousel-slide {
-    /*display: none;*/
-    height:  170px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(249, 249, 249, 0.6); /* White background with 80% opacity */
+/* Carousel styles */
+.carousel {
+    width: 100%;
+    max-width: 1200px;
+    /*margin: 100px auto 0;*/
+    margin-top: 5%;
+    background-color: rgba(249, 249, 249, 0.3);
+}
+
+.carousel__slide {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-title {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
+.carousel__icon-container {
+    flex: 0 0 100px;
+    margin-right: 20px;
 }
 
-.carousel-text {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 20px;
+.carousel__icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-link {
-    font-size: 1.2em;
-    color: #007BFF;
-    text-decoration: none;
+.carousel__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.carousel-link:hover {
-    text-decoration: underline;
+.carousel__title {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
 }
 
+.carousel__text {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
 
-/* Featured Courses Section */
+/* Featured courses section styles */
 .featured-courses {
     padding: 20px 20px;
     background-color: #fff;
     text-align: center;
 }
 
-.course-list {
+.featured-courses__list {
     display: flex;
     justify-content: space-around;
 }
 
-.course-item {
+.featured-courses__item {
     width: 30%;
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course-item:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+.featured-courses__item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-.course-item img {
+.featured-courses__icon {
     width: 60px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.course-item h2 {
-    padding: 20px; /* Add padding around the h2 */
-    text-align: center; /* Ensure the text is centered */
-    margin: 0; /* Remove any default margins if needed */
-    font-size: 2.0em; /* Adjust the font size */
-    color: #333333; /* Set font color to dark gray */
-    font-family: 'Calibri', sans-serif; /* Set the font to Calibri with a fallback to sans-serif */
+.featured-courses__title {
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+    font-size: 2.0em;
+    color: #333333;
+    font-family: 'Calibri', sans-serif;
 }
 
-.course-item h3 {
+.featured-courses__subtitle {
     margin-top: 15px;
     font-size: 1.2em;
 }
 
-/* How It Works Section */
+/* How it works section styles */
 .how-it-works {
     padding: 50px 20px;
     background-color: #f0f0f0;
     text-align: center;
 }
 
-.step-by-step {
+.how-it-works__steps {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 30px;
 }
 
-.step {
+.how-it-works__step {
     text-align: center;
     width: 30%;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.step:hover {
+.how-it-works__step:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.step-icon {
+.how-it-works__icon {
     width: 60px;
     height: auto;
     margin-bottom: 15px;
-    border-radius: 50%; /* This makes the image completely round */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
-
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.step h2 {
-    padding: 20px; /* Add padding around the h2 */
-    text-align: center; /* Ensure the text is centered */
-    margin: 0; /* Remove any default margins if needed */
-    font-size: 2.0em; /* Adjust the font size */
-    color: #333333; /* Set font color to dark gray */
-    font-family: 'Calibri', sans-serif; /* Set the font to Calibri with a fallback to sans-serif */
+.how-it-works__title {
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+    font-size: 2.0em;
+    color: #333333;
+    font-family: 'Calibri', sans-serif;
 }
-.step h3 {
+
+.how-it-works__subtitle {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #333333;
     font-family: 'Calibri', sans-serif;
 }
 
-.step p {
+.how-it-works__description {
     font-size: 1em;
     color: #666666;
     line-height: 1.5;
 }
 
-
+/* Testimonials section styles */
 .testimonials {
     padding: 50px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-.testimonials-list {
+.testimonials__list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.testimonial-card {
+.testimonials__card {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -339,43 +326,43 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial-card:hover {
+.testimonials__card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.testimonial-photo {
+.testimonials__photo {
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
 }
 
-.testimonial-card p {
+.testimonials__text {
     font-style: italic;
     color: #555;
 }
 
-.testimonial-card h4 {
+.testimonials__name {
     margin: 10px 0 5px;
     font-size: 1.2em;
     color: #333;
 }
 
-.testimonial-card h5 {
+.testimonials__position {
     font-size: 0.9em;
     color: #777;
 }
 
-
-/* Pricing Section */
+/* Pricing section styles */
 .pricing {
     padding: 50px 20px;
-    background-image: url('images/pricing background.webp'); /* Use the correct path */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Center the background image */
+    background-image: url('images/pricing background.webp');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+    position: relative;
 }
 
 .pricing::before {
@@ -385,19 +372,17 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9); /* White overlay with transparency */
-    z-index: -1; /* Keeps it behind the text */
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
 }
 
-
-
-.pricing-options {
+.pricing__options {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.plan {
+.pricing__plan {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -407,42 +392,38 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan.popular {
+.pricing__plan--popular {
     background-color: #007BFF;
     color: white;
     border: 3px solid #0056b3;
 }
 
-.plan.popular .price, .plan.popular h3, .plan.popular ul {
-    color: white;
-}
-
-.plan:hover {
+.pricing__plan:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.plan h3 {
+.pricing__title {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
 
-.price {
+.pricing__price {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.plan ul {
+.pricing__features {
     list-style: none;
     padding: 0;
 }
 
-.plan ul li {
+.pricing__feature {
     font-size: 1.1em;
     margin: 10px 0;
 }
 
-.plan a.cta {
+.pricing__cta {
     display: inline-block;
     margin-top: 20px;
     background-color: #007BFF;
@@ -452,73 +433,70 @@ header {
     text-decoration: none;
 }
 
-.plan.popular a.cta {
+.pricing__plan--popular .pricing__cta {
     background-color: white;
     color: #007BFF;
 }
 
-
-/* Footer */
-footer {
+/* Footer styles */
+.footer {
     background-color: #333;
     color: white;
     padding: 40px 20px;
     text-align: center;
 }
 
-.footer-content {
+.footer__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.footer-logo img {
+.footer__logo img {
     width: 70px;
 }
 
-.footer-nav ul {
+.footer__nav ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-nav ul li {
+.footer__nav-item {
     display: inline;
     margin: 0 15px;
 }
 
-.footer-nav ul li a {
+.footer__nav-link {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
 }
 
-.footer-nav ul li a:hover {
+.footer__nav-link:hover {
     text-decoration: underline;
 }
 
-.footer-social a img {
+.footer__social-link img {
     width: 30px;
     margin: 0 10px;
 }
 
-.footer-bottom {
+.footer__bottom {
     margin-top: 20px;
     font-size: 0.9em;
 }
 
-.footnotes {
+.footer__footnotes {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
 }
 
-.footnotes ol {
+.footer__footnotes ol {
     padding-left: 20px;
 }
 
-.footnotes li {
+.footer__footnote {
     font-size: 0.9em;
 }
-
-

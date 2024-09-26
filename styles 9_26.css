@@ -1,0 +1,678 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
+    padding: 20px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px; /* Adds a little padding to the right side */
+    width: 100%;
+}
+
+.logo {
+    display: flex; /* Ensures the image and text are aligned horizontally */
+    align-items: center; /* Vertically centers the image and text */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 30px;
+}
+
+.logo-img {
+    width: 50px; /* Adjust the width of the logo as needed */
+    height: auto;
+    margin-right: 10px; /* Adds space between the logo and the text */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px; /* Adds extra padding between links and the edge */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.cta {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-right: 70px; /* Adds padding between the button and the right edge */
+}
+
+.cta.secondary {
+    background-color: #333;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    /*padding-left: 30px;*/
+    background-image: url('images/background 1.png'); /* Replace with your background */
+    background-size: cover;
+    background-position: bottom;
+    border: 2px solid orange;
+}
+
+.features-list {
+    /*top: 120px; !* Sticks to 20px from the top of the window when scrolling *!*/
+    width: 20%; /* Adjust based on your layout */
+    padding-top: 8%;
+    padding-left: 1%;
+    text-align: left;
+    /*margin-top: 200px;*/
+    /*transform: translate(20%, 20%); !* Centers content horizontally and vertically *!*/
+    border: 2px solid yellow;
+
+}
+
+.features-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center; /* Align icon and text horizontally */
+    margin-bottom: 20px;
+}
+
+.features-list li img {
+    width: 70px; /* Adjust icon size */
+    height: auto;
+    margin-right: 10px; /* Space between icon and text */
+    border-radius: 50%; /* This makes the image completely round */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+}
+
+.features-list a {
+    text-decoration: none;
+    color: #333333; /* Dark gray color */
+    font-weight: bold;
+    font-size: 1.0em;
+}
+
+.features-list a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Optional: Change color on hover */
+}
+
+
+/*.hero-content {*/
+/*    position: relative;*/
+/*    !*top: 40%;*!*/
+/*    !*left: 50%;*!*/
+/*    !*transform: translate(-50%, -65%); !* Centers content horizontally and vertically *!*!*/
+/*    !*transform: translate(0%, -37%);*!*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    border: 2px solid purple;*/
+/*}*/
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center logo horizontally */
+    margin-bottom: 50px; /* Add spacing below the logo */
+    border: 2px solid purple;
+}
+
+.hero-logo {
+    display: block;
+    width: 450px;
+    height: auto;
+    margin: 10% auto 0;
+    /*margin-top: 150px;*/
+    /*margin-bottom: 90px;*/
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    background-color: rgba(249, 249, 249, 0.3);
+}
+
+/*.carousel-slide {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: flex-start;*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.slide-icon-container {*/
+/*    flex: 0 0 100px;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*.slide-content {*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: flex-start;*/
+/*    text-align: left;*/
+/*}*/
+
+.carousel-slide {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    padding: 20px !important;
+}
+
+.slide-icon-container {
+    flex: 0 0 100px !important;
+    margin-right: 20px !important;
+}
+
+.slide-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+.slide-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.slide-title {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.slide-text {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/*.carousel-container {*/
+/*    position: fixed;*/
+/*    bottom: -250px; !* Set this value to move the carousel closer to the bottom *!*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%); !* Center horizontally *!*/
+/*    !*max-width: 1200px; !* Set a max-width for the carousel *!*!*/
+/*    max-width: 90vh;*/
+/*    width: 100%; !* This ensures it adjusts to different screen sizes *!*/
+/*    margin: 0 auto; !* Centers the carousel horizontally *!*/
+/*    !*overflow: hidden;*!*/
+/*    padding: 20px; !* Optional: Padding to give some space inside the carousel *!*/
+/*    border-radius: 10px; !* Optional: Round the corners *!*/
+/*}*/
+
+/*.carousel-container {*/
+/*    position: relative; !* Relative positioning within hero *!*/
+/*    margin: 50px auto 0; !* Centers the carousel and adds 100px space above *!*/
+/*    width: 90%; !* Sets carousel width to 90% of the hero *!*/
+/*    max-width: 60%;*/
+/*    !*max-width: 1000px; !* Optionally set a maximum width for larger screens *!*!*/
+/*    padding: 20px; !* Adds padding around the content *!*/
+/*    border-radius: 10px; !* Rounds the corners *!*/
+/*}*/
+
+/*.carousel-container {*/
+/*    display: flex;*/
+/*    justify-content: center; !* Center the carousel horizontally *!*/
+/*    width: 80%; !* Make carousel take up most of the width *!*/
+/*    max-width: 1200px; !* Set a max width if desired *!*/
+/*    margin: 50px auto 0; !* 50px gap from logo *!*/
+/*    background-color: rgba(249, 249, 249, 0.3); !* Background color *!*/
+
+/*}*/
+
+/*!*.carousel-slide {*!*/
+/*!*    display: flex; !* Enable flexbox layout *!*!*/
+/*!*    align-items: center; !* Center vertically *!*!*/
+/*!*    justify-content: flex-start;*!*/
+/*!*    padding: 10px;*!*/
+/*!*    background-color: rgba(249, 249, 249, 0.6);*!*/
+/*!*    border-radius: 10px;*!*/
+/*!*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*!*/
+/*!*    width: 100%;*!*/
+/*!*    !*height: 100%;*!*!*/
+/*!*    height: auto;*!*/
+/*!*    box-sizing: border-box;*!*/
+/*!*    border: 2px solid red;*!*/
+/*!*    flex-direction: row;*!*/
+/*!*}*!*/
+
+/*.carousel-slide {*/
+/*    display: flex; !* Enable flexbox for horizontal layout *!*/
+/*    flex-direction: row;*/
+/*    align-items: center; !* Vertically center content *!*/
+/*    justify-content: flex-start;*/
+/*    !*width: 100%; !* Take full carousel width *!*!*/
+/*    padding: 20px; !* Add some padding for spacing *!*/
+/*    !*background-color: rgba(249, 249, 249, 0.5); !* Background color *!*!*/
+/*    border-radius: 10px; !* Rounded corners *!*/
+/*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); !* Optional shadow *!*/
+/*    box-sizing: border-box;*/
+/*    border: 2px solid black;*/
+/*    flex-wrap: nowrap;*/
+/*}*/
+
+/*.slide-icon-container {*/
+/*    !*display: flex;*!*/
+/*    flex: 0 0 auto; !* Fix width of icon container *!*/
+/*    !*justify-content: center; !* Center icon horizontally *!*!*/
+/*    !*align-items: center; !* Center icon vertically *!*!*/
+/*    margin-right: 20px; !* Space between icon and text *!*/
+/*    !*background-color: rgba(249, 249, 249, 0.5); !* Background color *!*!*/
+/*    width: 100px;*/
+/*    border: 2px solid yellow;*/
+/*}*/
+
+
+/*.slide-content {*/
+/*    flex: 1; !* Take remaining space *!*/
+/*    display: flex;*/
+/*    flex-direction: column; !* Stack title and text vertically *!*/
+/*    justify-content: center; !* Center content vertically *!*/
+/*    align-items: flex-start; !* Align content to the left *!*/
+/*    text-align: left;*/
+/*    !*display: flex;*!*/
+/*    !*flex-direction: column;*!*/
+/*    !*justify-content: center;*!*/
+/*    !*align-items: flex-start;*!*/
+/*    !*text-align: left;*!*/
+/*    !*gap: 20px;*!*/
+/*    !*background-color: rgba(249, 249, 249, 0.5); !* Background color *!*!*/
+/*    border: 2px solid blue;*/
+/*}*/
+
+
+/*.slide-icon {*/
+/*    !*display: flex;*!*/
+/*    !*flex-direction: row;*!*/
+/*    width: 100px; !* Size of the icon *!*/
+/*    height: auto;*/
+/*    !*height: 100px;*!*/
+/*    border-radius: 50%; !* Makes the icon round *!*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); !* Optional: Add a subtle shadow *!*/
+/*    !*flex-shrink: 0;*!*/
+/*    border: 2px solid green;*/
+/*}*/
+
+
+/*.carousel-slide h3 {*/
+/*    font-size: 1.8em;*/
+/*    margin-bottom: 10px;*/
+/*    !*text-align: center;*!*/
+/*    !*width: 100%;*!*/
+/*}*/
+
+/*.carousel-slide p {*/
+/*    font-size: 1.2em;*/
+/*    color: #555;*/
+/*}*/
+/*.slide-title {*/
+/*    margin: 0; !* Remove default margin *!*/
+/*    font-size: 1.5em;*/
+/*    font-weight: bold;*/
+/*}*/
+/*.slide-text {*/
+/*    margin: 10px 0 0; !* Space below the title *!*/
+/*    font-size: 1.2em;*/
+/*}*/
+/* Featured Courses Section */
+.featured-courses {
+    padding: 20px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.course-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-item {
+    width: 30%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+}
+
+.course-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+
+.course-item img {
+    width: 60px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+
+}
+
+.course-item h2 {
+    padding: 20px; /* Add padding around the h2 */
+    text-align: center; /* Ensure the text is centered */
+    margin: 0; /* Remove any default margins if needed */
+    font-size: 2.0em; /* Adjust the font size */
+    color: #333333; /* Set font color to dark gray */
+    font-family: 'Calibri', sans-serif; /* Set the font to Calibri with a fallback to sans-serif */
+}
+
+.course-item h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.step-by-step {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+
+.step {
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%; /* This makes the image completely round */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+
+}
+
+.step h2 {
+    padding: 20px; /* Add padding around the h2 */
+    text-align: center; /* Ensure the text is centered */
+    margin: 0; /* Remove any default margins if needed */
+    font-size: 2.0em; /* Adjust the font size */
+    color: #333333; /* Set font color to dark gray */
+    font-family: 'Calibri', sans-serif; /* Set the font to Calibri with a fallback to sans-serif */
+}
+.step h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333333;
+    font-family: 'Calibri', sans-serif;
+}
+
+.step p {
+    font-size: 1em;
+    color: #666666;
+    line-height: 1.5;
+}
+
+
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testimonials-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-card h4 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.testimonial-card h5 {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+/* Pricing Section */
+.pricing {
+    padding: 50px 20px;
+    background-image: url('images/pricing background.webp'); /* Use the correct path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.pricing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* White overlay with transparency */
+    z-index: -1; /* Keeps it behind the text */
+}
+
+
+
+.pricing-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 30px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan.popular {
+    background-color: #007BFF;
+    color: white;
+    border: 3px solid #0056b3;
+}
+
+.plan.popular .price, .plan.popular h3, .plan.popular ul {
+    color: white;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.plan a.cta {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.plan.popular a.cta {
+    background-color: white;
+    color: #007BFF;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    width: 70px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.footer-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.footnotes {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.footnotes ol {
+    padding-left: 20px;
+}
+
+.footnotes li {
+    font-size: 0.9em;
+}
+
+
