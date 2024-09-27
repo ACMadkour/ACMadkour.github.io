@@ -87,7 +87,11 @@ body {
     /*height: 100vh;*/
     /*min-height: calc(100vh - 90px);  !* Subtract header height from 100vh *!*/
     width: 100vw;
-    padding: 50px 0;
+    /*padding: 50px 0;*/
+    padding-top: 2%;
+    padding-bottom:  2.6%;
+    padding-left: 22.45%;
+    padding-right: 19%;
     background-image: url('images/background 1.png');
     background-size: cover;
     background-position: bottom;
@@ -136,7 +140,8 @@ body {
     flex-direction: column;
     align-items: center;
     /*margin-bottom: 50px;*/
-    width: 58.5%;
+    width: 100%;
+    /*border: 2px solid green;*/
 }
 
 .hero__logo {
@@ -149,20 +154,29 @@ body {
 /* Carousel styles */
 .carousel {
     width: 100%;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     /*margin: 100px auto 0;*/
-    margin-top: 5%;
+    margin-top: 4%;
     background-color: rgba(249, 249, 249, 0.3);
+    /*padding-left: 23%;*/
+    /*padding-right: 20%;*/
+    /*border: 2px solid red;*/
 }
 
 .carousel__slide {
     display: flex;
+    /*display: none;*/
     flex-direction: row;
     align-items: flex-start;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/*.carousel__slide:first-child {*/
+/*    display: flex; !* Show the first slide initially *!*/
+/*}*/
+
 
 .carousel__icon-container {
     flex: 0 0 100px;
@@ -182,8 +196,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
+    /*border: 2px solid blue;*/
 }
 
 .carousel__title {
