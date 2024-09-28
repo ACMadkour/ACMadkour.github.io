@@ -141,7 +141,7 @@ body {
     align-items: center;
     /*margin-bottom: 50px;*/
     width: 100%;
-    /*border: 2px solid green;*/
+    border: 2px solid green;
 }
 
 .hero__logo {
@@ -160,7 +160,7 @@ body {
     background-color: rgba(249, 249, 249, 0.3);
     /*padding-left: 23%;*/
     /*padding-right: 20%;*/
-    /*border: 2px solid red;*/
+    border: 2px solid red;
 }
 
 .carousel__slide {
@@ -198,7 +198,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /*border: 2px solid blue;*/
+    border: 2px solid blue;
 }
 
 .carousel__title {
