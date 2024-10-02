@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to the buttons
     rightBtn.addEventListener('click', showNextSlide);
     leftBtn.addEventListener('click', showPreviousSlide);
-
-    document.querySelector('.navbar__menu-icon').addEventListener('click', function() {
-        const navbarLinks = document.querySelector('.navbar__links');
-        navbarLinks.style.display = navbarLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-
 });
+
+document.querySelector('.navbar__menu-icon').addEventListener('click', function() {
+    const navbarLinks = document.querySelector('.navbar__links');
+    navbarLinks.style.display = navbarLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
 
