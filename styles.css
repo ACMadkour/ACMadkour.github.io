@@ -35,6 +35,114 @@ body {
     width: 100%;
 }
 
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+    /* Adjust header */
+    .header {
+        padding: 10px 20px;
+    }
+
+    /* Navbar adjustments */
+    .navbar__logo {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+
+    .navbar__links {
+        display: none; /* Hide navbar links for now */
+    }
+
+    /* Add a hamburger icon for mobile */
+    .navbar__menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        flex-direction: column;
+        padding: 20px 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__logo {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .carousel {
+        width: 95%;
+    }
+
+    .carousel__slide {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Featured courses adjustments */
+    .featured-courses__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-courses__item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* How it works adjustments */
+    .how-it-works__steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .how-it-works__step {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Testimonials adjustments */
+    .testimonials__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonials__card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Pricing adjustments */
+    .pricing__options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing__plan {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+.navbar__menu-icon {
+    display: none;
+    font-size: 2em;
+    color: #333;
+    margin-right: 20px;
+}
+
+/* Display the menu icon on mobile */
+@media (max-width: 768px) {
+    .navbar__menu-icon {
+        display: block;
+    }
+}
+
+
+
 .navbar__logo {
     display: flex;
     align-items: center;
@@ -408,7 +516,7 @@ body {
 /* Pricing section styles */
 .pricing {
     padding: 50px 20px;
-    background-image: url('images/pricing background.webp');
+    background-image: url('images/pricing background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

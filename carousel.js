@@ -1,46 +1,40 @@
-let slideIndex = 0;
-showSlides();
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize current slide index
+    let currentSlide = 0;
 
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("carousel-slide");
+    let slides = document.querySelectorAll('.carousel__slide');
+    const leftBtn = document.querySelector('.left-btn');
+    const rightBtn = document.querySelector('.right-btn');
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide all slides
+    // Hide all slides initially
+    slides.forEach((slide, index) => {
+        if (index !== 0) slide.style.display = 'none';
+    });
+
+    // Function to show the next slide
+    function showNextSlide() {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = 'flex'; // or 'block', based on your styling
     }
 
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to the first slide
+    function showPreviousSlide() {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide - 1) % slides.length;
+        slides[currentSlide].style.display = 'flex'; // or 'block', based on your styling
+    }
 
-    slides[slideIndex - 1].style.display = "block"; // Show the active slide
+    // Set interval to auto-scroll slides (e.g., every 3 seconds)
+    setInterval(showNextSlide, 10000);
 
-    setTimeout(showSlides, 7000); // Change slide every 5 seconds
-}
+    // Add event listeners to the buttons
+    rightBtn.addEventListener('click', showNextSlide);
+    leftBtn.addEventListener('click', showPreviousSlide);
 
+    document.querySelector('.navbar__menu-icon').addEventListener('click', function() {
+        const navbarLinks = document.querySelector('.navbar__links');
+        navbarLinks.style.display = navbarLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
 
-// Function to move to the next slide every 5 seconds (5000 milliseconds)
-let autoCycle = setInterval(() => {
-    nextSlide();
-}, 7000); // Adjust this value to set the desired interval time
-
-// Function for the next slide
-function nextSlide() {
-    showSlides(slideIndex += 1);
-}
-
-// Function for the previous slide
-function prevSlide() {
-    showSlides(slideIndex -= 1);
-}
-
-// Pause auto-cycling on hover
-document.querySelector('.carousel-container').addEventListener('mouseover', function() {
-    clearInterval(autoCycle); // Stop auto-cycling on hover
 });
 
-// Resume auto-cycling when the mouse leaves the carousel
-document.querySelector('.carousel-container').addEventListener('mouseout', function() {
-    autoCycle = setInterval(() => {
-        nextSlide();
-    }, 7000); // Resume auto-cycling after hover
-});
