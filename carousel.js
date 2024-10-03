@@ -37,4 +37,14 @@ document.querySelector('.navbar__menu-icon').addEventListener('click', function(
     navbarLinks.style.display = navbarLinks.style.display === 'flex' ? 'none' : 'flex';
 });
 
+// Open mobile menu
+document.querySelector('.navbar__menu-icon').addEventListener('click', function() {
+    document.getElementById('mobile-menu').style.display = 'block';
+});
+
+// Close mobile menu
+document.querySelector('.close-menu').addEventListener('click', function() {
+    document.getElementById('mobile-menu').style.display = 'none';
+});
+
 
