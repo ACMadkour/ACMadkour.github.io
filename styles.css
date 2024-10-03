@@ -644,7 +644,7 @@ body {
     /* Hero section adjustments */
     .hero {
         flex-direction: column;
-        padding: 20px 10px;
+        padding: 70px 10px;
         align-items: center;
         text-align: center;
     }
