@@ -135,6 +135,7 @@ body {
 
 .navbar__cta {
     background-color: #007BFF;
+    white-space: nowrap; /* Prevent text wrapping */
     color: #fff !important;
     padding: 10px 20px;
     border-radius: 5px;
@@ -639,6 +640,11 @@ body {
     .navbar__menu-icon {
         display: block;
         cursor: pointer;
+    }
+
+    .navbar__cta {
+        padding: 8px 12px; /* Reduce padding */
+        font-size: 0.9em; /* Reduce font size */
     }
 
     /* Hero section adjustments */
