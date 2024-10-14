@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Terms of Use</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    .content-container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
+    .hero-section {
+      font-family: 'Calibri', sans-serif; /* Keep the site’s consistent font */
+      /*background: url('images/background 1.png') no-repeat center center;*/
+      /*background-size: cover;*/
+      /*!*height: 100px;*!*/
+      /*display: flex;*/
+      /*flex-direction: column;*/
+      /*justify-content: center;*/
+      /*align-items: center;*/
+      /*color: white;*/
+      /*text-align: center;*/
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      /*height: 100vh;*/
+      /*min-height: calc(100vh - 90px);  !* Subtract header height from 100vh *!*/
+      width: 100vw;
+      /*padding: 50px 0;*/
+      padding: 3% 19% 2.6% 22.45%;
+      background-image: url('images/background 1.png');
+      background-color: rgba(255, 255, 255, 0.3);
+      background-size: cover;
+      background-position: bottom;
+      background-blend-mode: overlay; /* Blend the color with the image */
+      /*border: 2px solid red;*/
+    }
+
+    .hero-section h1 {
+      font-size: 3em;
+      margin: 10px;
+      color:  #333333;
+    }
+
+    .hero-section h2 {
+      font-size: 2em;
+      margin: 20px;
+      color:  #333333;
+    }
+
+    .hero-section p {
+      font-size: 1.25em;
+      margin-left: 20px;
+      color:  #333333;
+    }
+
+    /* Hero section styling for ordered lists */
+    .hero-section ol {
+      /*font-family: 'Calibri', sans-serif; !* Keep the site’s consistent font *!*/
+      color: #333333; /* Text color to match the rest of the hero section */
+      font-size: 1.2em; /* Adjusted for readability */
+      line-height: 1.6; /* Increased line height for better spacing */
+      margin: 20px 0; /* Add margin around the list */
+      padding-left: 30px; /* Add padding to offset the list from the content */
+      list-style-type: decimal; /* Standard decimal list */
+    }
+
+    /* List item styling */
+    .hero-section ol li {
+      margin-bottom: 15px; /* Spacing between each item */
+      padding-left: 10px; /* Small padding for the list items */
+    }
+
+    /* Style for the numbers in the list */
+    .hero-section ol li::marker {
+      color: #007BFF; /* Match the primary button color */
+      font-weight: bold; /* Make the numbers bold */
+    }
+
+    /* Optional: Hover effect for list items */
+    /*.hero-section ol li:hover {*/
+    /*  color: #0056b3; !* Darker hover color for interactivity *!*/
+    /*  cursor: pointer; !* Pointer on hover *!*/
+    /*}*/
+
+
+  </style>
+
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="hero-section">
+  <h1>Terms of Use</h1>
+
+  <ol>
+    <li><em>Acceptance of Terms</em><br>
+      By accessing or using the applications and services provided by EverGuide.AI, you agree to be bound by these Terms
+      of Use. If you do not agree to these terms, do not use our services.</li>
+    <li><em>Use of Services</em><br>
+      You agree to use our services only for lawful purposes and in a way that does not infringe the rights of, restrict
+      or inhibit anyone else's use and enjoyment of the services.</li>
+    <li><em>Intellectual Property</em><br>
+      The content and information on our apps, including software, texts, graphics, and images, are the property of
+      EverGuide.AI or its content suppliers and are protected by intellectual property rights laws. </li>
+    <li><em>User-Generated Content</em><br>
+      Users are responsible for any content they generate within the apps, including the responsibility for its legality,
+      reliability, and appropriateness.</li>
+    <li><em>Modifications to the Service</em><br>
+      EverGuide.AI reserves the right at any time to modify or discontinue, temporarily or permanently, the service
+      (or any part thereof) with or without notice. </li>
+    <li><em>Disclaimers</em><br>
+      Our services are provided "as is" and "as available" without any warranties of any kind, either express or implied,
+      including, but not limited to, implied warranties of merchantability or fitness for a particular purpose.</li>
+    <li><em>Limitation of Liability</em><br>
+      EverGuide.AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any
+      loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.</li>
+    <li><em>Governing Law</em><br>
+      These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which EverGuide.AI
+      operates, without giving effect to any principles of conflicts of law.</li>
+  </ol>
+  <p><em>Last Updated: April 12, 2024</em></p>
+</section>
+
+
+<div id="footer-placeholder"></div>
+<script>
+  // Load Header
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+  // Load Footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+
+</body>
+</html>

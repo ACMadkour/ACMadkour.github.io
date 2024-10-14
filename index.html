@@ -7,35 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-    <nav class="navbar">
-        <a href="#" class="navbar__logo">
-            <img src="images/navbar logo.png" alt="EverGuide Logo" class="navbar__logo-img">
-            EverGuide.AI
-        </a>
-        <span class="navbar__menu-icon">☰</span> <!-- Add a menu icon for mobile -->
-        <ul class="navbar__links">
-            <li class="navbar__link"><a href="#how-it-works">How It Works</a></li>
-            <li class="navbar__link"><a href="#courses">Courses</a></li>
-            <li class="navbar__link"><a href="#pricing">Pricing</a></li>
-            <li class="navbar__link"><a href="#testimonials">Testimonials</a></li>
-            <li class="navbar__link"><a href="#sign-up" class="navbar__cta">Get Started</a></li>
-        </ul>
-    </nav>
-
-    <!-- Overlay menu structure -->
-    <div id="mobile-menu" class="overlay-menu">
-        <span class="close-menu">&times;</span> <!-- Close button -->
-        <div class="overlay-content">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#courses">Courses</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#sign-up" class="cta">Get Started</a>
-        </div>
-    </div>
-
-</header>
+<div id="header-placeholder"></div>
 
 <section class="hero">
 <!--    <div class="hero__features-list">-->
@@ -71,7 +43,7 @@
         <img src="images/hero logo.png" alt="Hero Logo" class="hero__logo">
 
         <div class="carousel">
-            <img src="images/back carousel.png"  height=40 width=40 alt="Back" class="carousel-btn left-btn"/>
+<!--            <img src="images/back carousel.png"  height=40 width=40 alt="Back" class="carousel-btn left-btn"/>-->
             <div class="carousel__slide">
                 <div class="carousel__icon-container">
                     <img src="images/icon - interactive learning.png" alt="Conversational Learning Icon" class="carousel__icon">
@@ -143,10 +115,16 @@
                         your educational outcomes.</p>
                 </div>
             </div>
-            <img src="images/forward carousel.png" height=40 width=40 alt="Forward" class="carousel-btn right-btn"/>
+        </div>
+        <div class="carousel-btn-container">
+            <button class="carousel-btn left-btn">
+                <img src="images/back carousel.png" height="40" width="40" alt="Back">
+            </button>
+            <button class="carousel-btn right-btn">
+                <img src="images/forward carousel.png" height="40" width="40" alt="Forward">
+            </button>
         </div>
     </div>
-
 </section>
 
 <section id="courses" class="featured-courses">
@@ -195,13 +173,13 @@
     <h2 class="testimonials__title">What Our Learners Say</h2>
     <div class="testimonials__list">
         <div class="testimonials__card">
-            <img src="images/john doe.webp" alt="John Doe's Photo" class="testimonials__photo">
+<!--            <img src="images/john doe.webp" alt="John Doe's Photo" class="testimonials__photo">-->
             <p class="testimonials__text">"EverGuide helped me to explore my personality traits so I could better understand myself, my reactions and my goals."</p>
             <h4 class="testimonials__name">John Doe</h4>
             <h5 class="testimonials__position">Entrepreneur</h5>
         </div>
         <div class="testimonials__card">
-            <img src="images/jane smith.webp" alt="Jane Smith's Photo" class="testimonials__photo">
+<!--            <img src="images/jane smith.webp" alt="Jane Smith's Photo" class="testimonials__photo">-->
             <p class="testimonials__text">"I love how personalized the courses are. The conversational AI experts are spot on!"</p>
             <h4 class="testimonials__name">Jane Smith</h4>
             <h5 class="testimonials__position">Marketing Specialist</h5>
@@ -246,29 +224,18 @@
     </div>
 </section>
 
-<footer class="footer">
-    <div class="footer__content">
-        <div class="footer__logo">
-            <img src="images/navbar logo.png" alt="EverGuide Logo">
-        </div>
-        <nav class="footer__nav">
-            <ul>
-                <li class="footer__nav-item"><a href="#about" class="footer__nav-link">About Us</a></li>
-                <li class="footer__nav-item"><a href="#privacy" class="footer__nav-link">Privacy Policy</a></li>
-                <li class="footer__nav-item"><a href="#terms" class="footer__nav-link">Terms of Service</a></li>
-                <li class="footer__nav-item"><a href="#contact" class="footer__nav-link">Contact Us</a></li>
-            </ul>
-        </nav>
-        <div class="footer__social">
-            <a href="#" class="footer__social-link"><img src="images/social-facebook.png" alt="Facebook"></a>
-            <a href="#" class="footer__social-link"><img src="images/social-twitter.png" alt="Twitter"></a>
-            <a href="#" class="footer__social-link"><img src="images/social-linkedin.png" alt="LinkedIn"></a>
-        </div>
-    </div>
-    <div class="footer__bottom">
-        <p>&copy; 2024 EverGuide AI. All rights reserved.</p>
-    </div>
-</footer>
+<div id="footer-placeholder"></div>
+<script>
+    // Load Header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    // Load Footer
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
 
 <script src="carousel.js" defer></script>
 
