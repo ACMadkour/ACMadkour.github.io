@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <div id="header-placeholder"></div>
 
 <section class="hero">
@@ -225,14 +226,21 @@
 </section>
 
 <div id="footer-placeholder"></div>
+
 <script>
     // Load Header
     fetch('header.html')
         .then(response => response.text())
-        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            const script = document.createElement('script');
+            script.src = 'mobile.js';
+            document.body.appendChild(script);
+        });
 
-    // Load Footer
-    fetch('footer.html')
+
+// Load Footer
+fetch('footer.html')
         .then(response => response.text())
         .then(data => document.getElementById('footer-placeholder').innerHTML = data);
 </script>
