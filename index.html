@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EverGuide AI - Personalized Learning</title>
-    <link rel="stylesheet" href="styles.css">
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
 
@@ -228,21 +230,23 @@
 <div id="footer-placeholder"></div>
 
 <script>
-    // Load Header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            const script = document.createElement('script');
-            script.src = 'mobile.js';
-            document.body.appendChild(script);
-        });
+    window.addEventListener('load', function() {
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'mobile.js';
+                document.body.appendChild(script);
+            });
 
 
 // Load Footer
-fetch('footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    });
 </script>
 
 <script src="carousel.js" defer></script>
