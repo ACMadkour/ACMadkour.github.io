@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-section {
+            font-family: 'Calibri', sans-serif; /* Keep the site’s consistent font */
+            /*background: url('images/background 1.png') no-repeat center center;*/
+            /*background-size: cover;*/
+            /*!*height: 100px;*!*/
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            /*color: white;*/
+            /*text-align: center;*/
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            /*height: 100vh;*/
+            /*min-height: calc(100vh - 90px);  !* Subtract header height from 100vh *!*/
+            width: 100vw;
+            /*padding: 50px 0;*/
+            padding: 3% 19% 2.6% 22.45%;
+            background-image: url('images/background 1.png');
+            background-color: rgba(255, 255, 255, 0.3);
+            background-size: cover;
+            background-position: bottom;
+            background-blend-mode: overlay; /* Blend the color with the image */
+            /*border: 2px solid red;*/
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 10px;
+            color:  #333333;
+        }
+
+        .hero-section h2 {
+            font-size: 2em;
+            margin: 20px;
+            color:  #333333;
+        }
+
+        .hero-section p {
+            font-size: 1.25em;
+            margin-left: 20px;
+            color:  #333333;
+        }
+
+        /* Hero section styling for ordered lists */
+        .hero-section ol {
+            /*font-family: 'Calibri', sans-serif; !* Keep the site’s consistent font *!*/
+            color: #333333; /* Text color to match the rest of the hero section */
+            font-size: 1.2em; /* Adjusted for readability */
+            line-height: 1.6; /* Increased line height for better spacing */
+            margin: 20px 0; /* Add margin around the list */
+            padding-left: 30px; /* Add padding to offset the list from the content */
+            list-style-type: decimal; /* Standard decimal list */
+        }
+
+        /* List item styling */
+        .hero-section ol li {
+            margin-bottom: 15px; /* Spacing between each item */
+            padding-left: 10px; /* Small padding for the list items */
+        }
+
+        /* Style for the numbers in the list */
+        .hero-section ol li::marker {
+            color: #007BFF; /* Match the primary button color */
+            font-weight: bold; /* Make the numbers bold */
+        }
+
+        /* Optional: Hover effect for list items */
+        /*.hero-section ol li:hover {*/
+        /*  color: #0056b3; !* Darker hover color for interactivity *!*/
+        /*  cursor: pointer; !* Pointer on hover *!*/
+        /*}*/
+
+        @media (max-width: 810px) {
+
+            /* Hero section adjustments */
+            .hero-section {
+                flex-direction: column;
+                padding: 70px 10px;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="hero-section">
+    <h1>About Us</h1>
+    <p>
+        Welcome to EverGuide.AI — where learning meets innovation. We believe that education should be as unique as
+        the learners themselves, adapting to their pace, their needs, and their curiosity. EverGuide.AI is here to
+        redefine learning, making it interactive, deeply personal, and highly effective. Whether you’re an eager
+        student, a professional looking to upskill, or a course creator with knowledge to share, EverGuide.AI empowers
+        you to shape your own educational journey.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+        Our mission is to make learning more accessible, engaging, and empowering through the power of AI-driven
+            conversations. We’re here to turn passive learning into an active, inspiring experience—one that encourages
+            learners to ask questions, explore in-depth, and think critically. We know that learning is not
+            one-size-fits-all, and we strive to make education as flexible and customizable as possible.
+        </p>
+
+        <h2>Why EverGuide.AI?</h2>
+    <ol>
+        <li>
+            <em>Conversational Learning</em><br>
+            We’ve developed EverGuide.AI to bring back the joy of human-like interaction in learning.
+            With our conversational AI, learners get the chance to engage in educational dialogues that
+            expand their understanding. The AI acts as both teacher and mentor, offering support that adapts
+            to the learner's knowledge level and style. It’s like having a personal tutor by your side,
+            ready to dive deeper, answer questions, or provide new insights whenever you need.
+        </li>
+
+        <li>
+            <em>AI-Assisted Course Creation</em><br>
+            EverGuide.AI is not just for learners—it’s also an empowering platform for educators.
+            With our AI-assisted course creation tools, educators and creators can effortlessly turn their
+            expertise into structured, engaging courses. The AI works alongside course creators to shape
+            content, generate new ideas, and ensure each course is comprehensive and easy to follow. Y
+            ou bring the knowledge; we help bring it to life.
+        </li>
+
+        <li>
+            <em>Learn at Your Own Pace</em><br>
+            We understand that every learner is different, which is why EverGuide.AI allows you to learn
+            at your own speed. Take your time to master complex concepts, or fast-track through material you’re
+            already comfortable with. With EverGuide.AI, there’s no pressure to keep up or slow down—you set the
+            pace that works for you.
+        </li>
+
+        <li>
+            <em>Depth of Knowledge</em><br>
+            EverGuide.AI lets you go as deep as your curiosity takes you. With the ability to ask questions
+            and explore various topics thoroughly, learners are encouraged to pursue every ‘why’ and ‘how’ they
+            encounter. Our AI doesn’t just provide surface-level answers; it engages with you until the concepts
+            click, providing the foundation for true mastery.
+        </li>
+    </ol>
+
+    <h2>Our Vision</h2>
+    <p>
+        We envision a world where education is tailored to each individual’s needs, accessible from anywhere,
+        and driven by curiosity. We believe in breaking down barriers—be it location, pace, or access—to help everyone
+        achieve their full learning potential. EverGuide.AI isn’t just an ed-tech platform; it’s a movement to make learning
+        more dynamic, connected, and meaningful.
+        </p>
+
+        <h2>The EverGuide Community</h2>
+        <p>
+            We’re more than just technology. EverGuide.AI is a community of learners, educators, and creators who are
+            passionate about knowledge. Our platform fosters collaboration and the exchange of ideas—whether through
+            conversations with the AI, shared projects, or courses designed by experts. We believe that everyone has
+            something valuable to contribute, and our platform is built to nurture that exchange.
+            </p>
+
+        <h2>Join Us</h2>
+        <p>
+        Whether you’re looking to grow your knowledge, share your expertise, or transform how learning happens,
+            EverGuide.AI welcomes you. We’re building the future of education—one conversation at a time. Let’s learn,
+            engage, and inspire together.
+
+        Ready to get started? Explore our courses or create your own today, and let EverGuide.AI guide you on your journey to knowledge.
+    </p>
+</section>
+
+
+<div id="footer-placeholder"></div>
+<script>
+    window.addEventListener('load', function() {
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+
+                // Attach your JavaScript after the header is loaded
+                const script = document.createElement('script');
+                script.src = 'mobile.js';
+                document.body.appendChild(script);
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the current URL fragment
+        const fragment = window.location.hash;
+
+        if (fragment) {
+            // Wait a moment to ensure everything is loaded, then scroll smoothly to the section
+            setTimeout(() => {
+                const targetElement = document.querySelector(fragment);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 500); // Adjust the delay as needed
+        }
+    });
+</script>
+
+
+</body>
+</html>
