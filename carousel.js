@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Set interval to auto-scroll slides (e.g., every 3 seconds)
-    setInterval(showNextSlide, 10000);
+    setInterval(showNextSlide, 20000);
 
     // Add event listeners to the buttons
     rightBtn.addEventListener('click', showNextSlide);
