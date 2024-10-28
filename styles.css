@@ -84,7 +84,7 @@ body {
 
 .overlay-content {
     position: relative;
-    top: 25%; /* Center the content */
+    top: 10%; /* Center the content */
     width: 100%;
     text-align: center;
     margin-top: 30px;
@@ -93,7 +93,7 @@ body {
 .overlay-content a {
     padding: 15px;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #fff; /* White text color */
     display: block; /* Vertical stack */
     transition: 0.3s;
