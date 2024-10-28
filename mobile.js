@@ -14,30 +14,8 @@ function closeMenu() {
     menuOverlay.classList.remove('open');
 }
 
-// function attachMenuListeners() {
-//     console.log('DOM fully loaded and parsed'); // Check if DOMContentLoaded is firing
-//     // Use a more specific selector to target the links inside .overlay-content
-//     const links = document.querySelectorAll('#menuOverlay .overlay-content a');
-//     console.log('Links found:', links); // Debugging: Check if links are selected
+
 //
-//     links.forEach(link => {
-//         console.log('Attaching event listener to:', link);
-//         link.addEventListener('click', function (event) {
-//             event.preventDefault(); // Prevent default link behavior
-//
-//             const targetId = this.getAttribute('href').split('#')[1];
-//             // const targetElement = document.querySelector(`#${targetId}`);
-//             window.location.href = `index.html#${targetId}`;
-//
-//             // if (targetElement) {
-//             //     targetElement.scrollIntoView({behavior: 'smooth'});
-//             //     closeMenu();
-//             // } else {
-//             //     console.error('Target element not found:', targetId);
-//             // }
-//         });
-//     });
-// }
 
 function attachMenuListeners() {
     const hamburgerMenu = document.getElementById('hamburger');
@@ -58,25 +36,30 @@ function attachMenuListeners() {
             link.addEventListener('click', function (event) {
                 event.preventDefault(); // Prevent default link behavior
 
-                // Extract the fragment identifier (e.g., #how-it-works)
-                const targetId = this.getAttribute('href').split('#')[1];
-                const targetElement = document.getElementById(targetId);
-
-                // Check if we are already on index.html or just '/'
+                const isIndexLink = this.classList.contains('index-link');
+                const targetHref = this.getAttribute('href');
+                const targetId = targetHref.split('#')[1];
                 const isOnIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
 
-                if (isOnIndex) {
-                    // If we are already on index.html, scroll to the section
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                if (isIndexLink) {
+                    // If the link should scroll to a section in index.html
+                    if (isOnIndex) {
+                        // If we're already on index.html, scroll to the section
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            console.error('Target element not found:', targetId);
+                        }
+                        closeMenu();
                     } else {
-                        console.error('Target element not found:', targetId);
+                        // Navigate to index.html with the fragment identifier
+                        sessionStorage.setItem('closeMenuAfterNavigate', 'true');
+                        window.location.href = `index.html#${targetId}`;
                     }
-                    // Close the menu overlay
-                    closeMenu();
                 } else {
-                    // If not on index.html, navigate to index.html with the appropriate fragment
-                    window.location.href = `index.html#${targetId}`;
+                    // If the link should navigate to a different page
+                    window.location.href = targetHref;
                 }
             });
         });
@@ -84,7 +67,6 @@ function attachMenuListeners() {
         console.error('hamburgerMenu is null');
     }
 }
-
 
 // document.addEventListener('DOMContentLoaded', function() {
     const hamburgerMenu = document.querySelector('.navbar__menu-icon');
