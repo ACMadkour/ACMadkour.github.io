@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>For Learners</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="hero">
+ <div class="hero-content">
+  <h1 class="featured-courses__title">Your Personal Mentor Awaits</h1>
+
+  <div class="featured-courses__list">
+    <img src="images/for learners 1.png" height="300" width="600" alt="Learners screenshot of course interface"/>
+   <div class="featured-courses__item">
+    <h2>Your Path to Learning</h2>
+    <p>
+     Chart your own course - skip ahead or revisit insights at will. The learning doesn't stop when the course does.
+     Flip to Mentor Mode and tap into a guide that combines all course knowledge with your personal learning history.
+     Ask anything - your AI mentor uses the course's full expertise and your unique progress to expand your understanding
+     beyond the syllabus.
+    </p>
+   </div>
+  </div>
+
+  <br><br>
+
+  <div class="featured-courses__list">
+   <div class="featured-courses__item">
+    <h2>Every Word Just for You</h2>
+    <p>
+     Our AI listens, remembers, and adapts, making each interaction meaningful. Your AI mentor evolves with you,
+     ensuring that all guidance is perfectly in tune with your learning journey.
+    </p>
+   </div>
+   <img src="images/for learners 2.png" height="300" width="600" alt="learner screenshot of dialogue"/></div>
+
+  <br><br>
+
+  <div class="featured-courses__list">
+
+   <img src="images/for learners 3.png" height="404" width="600" alt="learner  screenshot of course catalog"/>
+   <div class="featured-courses__item">
+    <h3>Unlimited Access, Limitless Growth</h3><br>
+    <p>Every course at your fingertips. From communication skills to advanced tech, our AI personalizes each lesson to
+     your style. New content added regularly. One subscription unlocks it all. Where will your curiosity take you?</p>
+   </div>
+  </div>
+
+  <br><br>
+
+  <div class="featured-courses__list">
+   <div class="featured-courses__item">
+    <h3>Your Personalized Learning Journey</h3><br>
+    <p>Unlock tailored lessons that adapt to you. Our AI mentors guide you every step of the way. Ready to learn your
+     way for just $20 per month?</p><br>
+    <div style="text-align: center;"><a href="https://app.everguide.ai/sign-up" class="navbar__cta">Get Started</a></div>
+   </div>
+
+
+
+
+  </div>
+  <br><br>
+
+
+
+ </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+ window.addEventListener('load', function() {
+  // Load Header
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+           document.getElementById('header-placeholder').innerHTML = data;
+
+           // Attach your JavaScript after the header is loaded
+           const script = document.createElement('script');
+           script.src = 'mobile.js';
+           document.body.appendChild(script);
+          });
+
+  // Load Footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+ });
+
+ // Scroll smoothly to the section if there's a fragment identifier in the URL
+ document.addEventListener('DOMContentLoaded', function () {
+  const fragment = window.location.hash;
+  if (fragment) {
+   setTimeout(() => {
+    const targetElement = document.querySelector(fragment);
+    if (targetElement) {
+     targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+   }, 500);
+  }
+ });
+</script>
+
+</body>
+</html>
