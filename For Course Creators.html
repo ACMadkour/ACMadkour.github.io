@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>For Course Creators</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="hero">
+ <div class="hero-content">
+  <h1 class="featured-courses__title">Create, Share, and Earn with EverGuide.AI</h1>
+
+  <div class="featured-courses__list">
+    <img src="images/course creators 1.png" height="300" width="600" alt="Course Creator Screenshot"/>
+
+    <div class="featured-courses__item">
+     <h2>Create Courses with AI Assistance</h2>
+     <p>
+      Designing your course is as easy as crafting a lesson plan. With our intuitive platform, you don’t need any
+      programming or AI experience. Our advanced AI takes care of the complex details, providing continuous support and
+      interactive guidance to bring your content to life.
+     </p>
+    </div>
+   </div>
+  
+<br><br>
+  
+  <div class="featured-courses__list">
+   <div class="featured-courses__item">
+    <h2>Earn Revenue Based on Learner Engagement</h2>
+    <p>
+     Your success is our success. With EverGuide.AI, you earn in two ways: receive payment when a user subscribes and 
+     enjoy recurring revenue as students interact with your courses. The more they engage, the more you earn!
+    </p>
+   </div>
+
+   <img src="images/learn-image.jpg" height="300" width="600" alt="Course Creator Image"/>
+  </div>
+
+  <br><br>
+
+
+
+  <div class="featured-courses__list">  <img src="images/course creators 2.png" height="300" width="600" alt="Creator screenshot"/>
+   <div class="featured-courses__item">
+    <h3>Collaborate with AI to Build Your Course</h3><br>
+    <p>Work alongside our advanced AI to create comprehensive and engaging courses. Break down complex topics into
+     manageable lessons, and let the AI help you structure and optimize your content. With its support, you can focus
+     on delivering quality education while the AI handles the intricate details.</p>
+   </div>
+  </div>
+
+  <br><br>
+
+  <div class="featured-courses__list">
+   <div class="featured-courses__item">
+    <h3>Monetize your knowledge</h3><br>
+    <p>Join EverGuide.AI today and start creating engaging, personalized courses with the support of advanced AI. Share
+     your knowledge, inspire learners, and turn your expertise into income as students connect with your content.</p><br>
+    <div style="text-align: center;"><a href="https://app.everguide.ai/sign-up" class="navbar__cta">Get Started</a></div>
+   </div>
+
+
+
+
+   </div>
+  <br><br>
+
+
+
+ </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+ window.addEventListener('load', function() {
+  // Load Header
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+           document.getElementById('header-placeholder').innerHTML = data;
+
+           // Attach your JavaScript after the header is loaded
+           const script = document.createElement('script');
+           script.src = 'mobile.js';
+           document.body.appendChild(script);
+          });
+
+  // Load Footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+ });
+
+ // Scroll smoothly to the section if there's a fragment identifier in the URL
+ document.addEventListener('DOMContentLoaded', function () {
+  const fragment = window.location.hash;
+  if (fragment) {
+   setTimeout(() => {
+    const targetElement = document.querySelector(fragment);
+    if (targetElement) {
+     targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+   }, 500);
+  }
+ });
+</script>
+
+</body>
+</html>
