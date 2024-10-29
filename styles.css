@@ -18,6 +18,16 @@ body {
     padding-top: 4.5%;
 }
 
+h1 {
+    font-size: 3rem; /* Adjust the size as needed (e.g., px, em, rem) */
+}
+
+.page__images {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Header styles */
 .header {
     position: fixed;
