@@ -258,6 +258,31 @@ h1 {
     /*margin: 3% auto 0;*/
 }
 
+.hero__app-availability {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero__app-availability p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligns badges by their midlines */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.download-badge {
+    width: 150px; /* Adjust size as necessary */
+    height: auto;
+}
+
+
 /* Carousel styles */
 .carousel {
     width: 90%;
@@ -384,17 +409,27 @@ h1 {
 }
 
 .featured-courses__item {
-    width: 30%;
+    /*width: 30%;*/
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*overflow: hidden;*/
 }
 
 .featured-courses__item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.featured-courses__link {
+    width: 30%;
+    /*padding: 10px;*/
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Use the inherited text color to keep consistent design */
+    display: block; /* Make the entire link block clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add some animations for better user experience */
 }
 
 .featured-courses__icon {
