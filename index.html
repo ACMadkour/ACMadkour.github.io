@@ -881,11 +881,7 @@
       <div class="contact-detail">
         <div class="contact-line">
           <strong>Email</strong>
-          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb5b8b1b1b29dadb1bca9bbb2afb0beb2b3aea8b1a9b4b3baf3b4b2">[email&#160;protected]</a></span>
-        </div>
-        <div class="contact-line">
-          <strong>Based</strong>
-          <span>Albuquerque, NM // Queensbury, NY — working remotely nationwide</span>
+          <span><a href="mailto:adam@platform-consulting.com" style="color:inherit; text-decoration:none;">adam@platform-consulting.com</a></span>
         </div>
         <div class="contact-line">
           <strong>Focus</strong>
@@ -893,33 +889,12 @@
         </div>
       </div>
     </div>
-    <div class="contact-right reveal">
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Jane Smith" />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="jane@company.com" />
-        </div>
-        <div class="form-group">
-          <label>Project Type</label>
-          <select>
-            <option value="" disabled selected>Select a service...</option>
-            <option>AI Workflow Automation</option>
-            <option>Custom AI Agent / Chatbot</option>
-            <option>Mobile App Development</option>
-            <option>AI Audit &amp; Roadmap</option>
-            <option>Other / Not Sure Yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tell Us About Your Project</label>
-          <textarea placeholder="What problem are you trying to solve? What does success look like?"></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%; text-align:center;">Send Message →</button>
-      </form>
+    <div class="contact-right reveal" style="display:flex; align-items:center;">
+      <div>
+        <p class="section-label">Email Us</p>
+        <a href="mailto:adam@platform-consulting.com" style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); letter-spacing:0.04em; color:var(--white); text-decoration:none; display:block; margin-bottom:1rem; transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--white)'">adam@platform-consulting.com</a>
+        <p style="font-size:0.875rem; font-weight:300; color:var(--light); line-height:1.7;">Drop us a line with a brief description of your project and we'll get back to you promptly.</p>
+      </div>
     </div>
   </section>
 
@@ -941,13 +916,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form submit placeholder
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent!';
-      btn.disabled = true;
-    }
   </script>
 </body>
 </html>
