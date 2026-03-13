@@ -1,71 +1,948 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EverGuide</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f2ee;
+      --accent: #e8500a;
+      --accent2: #f0a500;
+      --gray: #1a1a1a;
+      --mid: #444;
+      --light: #888;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 4rem 6rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 7vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: 0.03em;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-title .line2 { color: var(--accent); }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.6;
+      max-width: 400px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-tagline strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: #c93e00; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid #333;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--white); }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-graphic {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: fadeIn 1.2s 0.5s forwards;
+    }
+
+    .hero-graphic svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-stat-block {
+      position: absolute;
+      bottom: 4rem;
+      left: 4rem;
+      display: flex;
+      gap: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .stat { border-left: 2px solid var(--accent); padding-left: 1rem; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-top: 0.3rem;
+    }
+
+    /* SECTION BASE */
+    section { padding: 7rem 4rem; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.8;
+      max-width: 580px;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--gray);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-text .section-body { margin-bottom: 2rem; }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .pill {
+      background: #252525;
+      border: 1px solid #333;
+      color: var(--light);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+    }
+
+    .about-aside {
+      border-left: 1px solid #2a2a2a;
+      padding-left: 4rem;
+    }
+
+    .about-quote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .about-quote span { color: var(--accent); }
+
+    /* SERVICES */
+    #services { background: var(--black); }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #1a1a1a;
+    }
+
+    .service-card {
+      background: var(--black);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .service-card:hover { background: #111; }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.4s;
+    }
+
+    .service-card:hover::before { height: 100%; }
+
+    .service-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: #1e1e1e;
+      line-height: 1;
+      margin-bottom: 1rem;
+      transition: color 0.3s;
+    }
+
+    .service-card:hover .service-num { color: #2a2a2a; }
+
+    .service-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.7;
+    }
+
+    /* WORK */
+    #work { background: var(--gray); }
+
+    .work-header {
+      margin-bottom: 4rem;
+    }
+
+    .projects-list { display: flex; flex-direction: column; gap: 1px; background: #222; }
+
+    .project-item {
+      background: var(--gray);
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      gap: 3rem;
+      padding: 2.5rem 3rem;
+      cursor: default;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+
+    .project-item:hover { background: #1f1f1f; }
+    .project-item:hover::after { transform: scaleX(1); }
+
+    .project-index {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: #2a2a2a;
+    }
+
+    .project-content {}
+
+    .project-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(232,80,10,0.08);
+      padding: 0.25rem 0.75rem;
+      white-space: nowrap;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-left .section-title { font-size: clamp(3rem, 5vw, 5.5rem); }
+    .contact-left .section-title span { color: var(--accent); }
+
+    .contact-left .section-body { margin-bottom: 3rem; }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--light);
+      font-weight: 300;
+    }
+
+    .contact-line strong {
+      color: var(--white);
+      font-weight: 500;
+      min-width: 60px;
+    }
+
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      padding: 0.9rem 1.2rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group select option { background: #111; }
+    .form-group textarea { resize: vertical; min-height: 140px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      color: var(--light);
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 9rem 2rem 4rem; }
+      section { padding: 5rem 2rem; }
+      #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+      .about-aside { border-left: none; padding-left: 0; border-top: 1px solid #2a2a2a; padding-top: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .project-item { grid-template-columns: 50px 1fr; }
+      .project-tags { display: none; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">For Learners</a></li>
-            <li><a href="#">For Course Creators</a></li>
-            <li><a href="#">Explore Courses</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#" class="cta">Sign Up | Login</a></li>
-        </ul>
-    </nav>
-</header>
 
-<section class="hero">
-    <img src="EverGuide Logo new transp.png" height="471" width="700" alt="Company Logo" class="logo"/>
-    <div class="marketing-copy">
-        <!--Engage. <br>Learn.<br> Create. Harness the power of AI to unlock personalized educational conversations.-->
-        <img src="Engage.png" alt="Marketing Image" style="width: 80%; max-width: 400px; height: auto;" />
-    </div>
-    <!--div class="cta-group">
-        <a href="#" class="cta">Learn More</a>
-        <a href="#" class="cta secondary">Get Started</a>
-    </div>
-    <div class="hero-content">
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#"><span>P</span>LATFORM CONSULTING</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    </div-->
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">AI Integration &amp; Technology Consulting</p>
+      <h1 class="hero-title">
+        <span class="line1">INTELLIGENT</span><br>
+        <span class="line2">AUTOMATION,</span><br>
+        <span class="line1">BUILT FOR THE</span><br>
+        <span class="line2">REAL WORLD.</span>
+      </h1>
+      <p class="hero-tagline">
+        We build <strong>AI systems that fit the way you already work</strong> — not the other way around. Practical, powerful, and built to last.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-primary">See Our Work</a>
+        <a href="#contact" class="btn-secondary">Start a Project</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-graphic">
+        <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="glow1" cx="50%" cy="40%" r="50%">
+              <stop offset="0%" stop-color="#e8500a" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="600" height="800" fill="#0d0d0d"/>
+          <rect width="600" height="800" fill="url(#glow1)"/>
+          <!-- Grid lines -->
+          <g stroke="#1a1a1a" stroke-width="1">
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+            <line x1="0" y1="400" x2="600" y2="400"/>
+            <line x1="0" y1="500" x2="600" y2="500"/>
+            <line x1="0" y1="600" x2="600" y2="600"/>
+            <line x1="0" y1="700" x2="600" y2="700"/>
+            <line x1="100" y1="0" x2="100" y2="800"/>
+            <line x1="200" y1="0" x2="200" y2="800"/>
+            <line x1="300" y1="0" x2="300" y2="800"/>
+            <line x1="400" y1="0" x2="400" y2="800"/>
+            <line x1="500" y1="0" x2="500" y2="800"/>
+          </g>
+          <!-- Node circles -->
+          <circle cx="300" cy="300" r="80" fill="none" stroke="#e8500a" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="300" cy="300" r="120" fill="none" stroke="#e8500a" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="300" cy="300" r="160" fill="none" stroke="#e8500a" stroke-width="0.3" opacity="0.15"/>
+          <!-- Connection lines -->
+          <line x1="300" y1="300" x2="150" y2="160" stroke="#e8500a" stroke-width="1" opacity="0.5"/>
+          <line x1="300" y1="300" x2="480" y2="200" stroke="#e8500a" stroke-width="1" opacity="0.5"/>
+          <line x1="300" y1="300" x2="500" y2="420" stroke="#e8500a" stroke-width="1" opacity="0.5"/>
+          <line x1="300" y1="300" x2="120" y2="480" stroke="#e8500a" stroke-width="1" opacity="0.5"/>
+          <line x1="300" y1="300" x2="300" y2="580" stroke="#e8500a" stroke-width="1" opacity="0.3"/>
+          <!-- Nodes -->
+          <circle cx="300" cy="300" r="8" fill="#e8500a"/>
+          <circle cx="150" cy="160" r="5" fill="#e8500a" opacity="0.8"/>
+          <circle cx="480" cy="200" r="5" fill="#e8500a" opacity="0.8"/>
+          <circle cx="500" cy="420" r="5" fill="#f0a500" opacity="0.8"/>
+          <circle cx="120" cy="480" r="5" fill="#f0a500" opacity="0.8"/>
+          <circle cx="300" cy="580" r="4" fill="#e8500a" opacity="0.5"/>
+          <!-- Sub-nodes -->
+          <circle cx="80" cy="100" r="3" fill="#333"/>
+          <circle cx="220" cy="80" r="3" fill="#333"/>
+          <circle cx="540" cy="300" r="3" fill="#333"/>
+          <circle cx="400" cy="520" r="3" fill="#333"/>
+          <circle cx="200" cy="620" r="3" fill="#333"/>
+          <line x1="150" y1="160" x2="80" y2="100" stroke="#333" stroke-width="0.8"/>
+          <line x1="150" y1="160" x2="220" y2="80" stroke="#333" stroke-width="0.8"/>
+          <line x1="480" y1="200" x2="540" y2="300" stroke="#333" stroke-width="0.8"/>
+          <line x1="500" y1="420" x2="400" y2="520" stroke="#333" stroke-width="0.8"/>
+          <line x1="300" y1="580" x2="200" y2="620" stroke="#333" stroke-width="0.8"/>
+          <!-- Label chips -->
+          <rect x="320" y="285" width="90" height="20" rx="2" fill="#1a1a1a"/>
+          <text x="330" y="299" font-family="'Outfit', sans-serif" font-size="9" fill="#888" letter-spacing="1">AI ENGINE</text>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-stat-block">
+      <div class="stat">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Years in Tech</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">GT</div>
+        <div class="stat-label">M.S. CS, 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">AI</div>
+        <div class="stat-label">First Approach</div>
+      </div>
+    </div>
+  </section>
 
-<section class="features">
-    <div class="feature">
-        <img src="icon - interactive learning.webp" height="1024" width="1024"/>
-        <h3>Interactive Learning Experience</h3>
-        <!--p>Learners engage in free-form, interactive educational conversations that adapts to your specific needs and pace.</p-->
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text reveal">
+      <p class="section-label">About</p>
+      <h2 class="section-title">TECHNOLOGY THAT<br>DOES THE WORK</h2>
+      <p class="section-body">
+        Platform Consulting is the boutique AI integration and technology consulting practice of Adam Madkour — a computer scientist, former C-suite executive, and Georgia Tech–trained AI researcher. We specialize in making AI work inside your existing operations — not alongside them.
+      </p>
+      <p class="section-body" style="margin-top:1rem;">
+        Every engagement is hands-on and built around your actual workflows. 25+ years across defense engineering (Lockheed Martin), enterprise operations (Saratoga Spring Water), and applied AI research means you get senior-level depth — not junior execution.
+      </p>
+      <div class="about-pills">
+        <span class="pill">AI Integration</span>
+        <span class="pill">Mobile Development</span>
+        <span class="pill">Workflow Automation</span>
+        <span class="pill">React Native</span>
+        <span class="pill">Python</span>
+        <span class="pill">LLM APIs</span>
+        <span class="pill">NLP</span>
+        <span class="pill">Machine Learning</span>
+        <span class="pill">Supabase</span>
+        <span class="pill">Algorithmic Systems</span>
+      </div>
     </div>
-    <div class="feature">
-        <img src="icon - ai course creation.webp" height="1024" width="1024"/>
-        <h3>AI-assisted Course Creation</h3>
-        <!--p>Automatically generate comprehensive courses in minutes.</p-->
+    <div class="about-aside reveal">
+      <div class="about-quote">
+        "FEWER BUZZWORDS.<br><span>BETTER</span> SYSTEMS."
+      </div>
+      <p class="section-body">
+        Founded by Adam Madkour — a computer scientist, former C-suite executive, and Georgia Tech–trained AI researcher with 25+ years spanning defense engineering, enterprise operations, and applied machine learning.
+      </p>
+      <div style="margin-top:2rem; display:flex; flex-direction:column; gap:1.2rem;">
+        <div style="display:grid; grid-template-columns:3px 1fr; gap:1rem; align-items:start;">
+          <div style="background:var(--accent); min-height:44px;"></div>
+          <div>
+            <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem;">Education</div>
+            <div style="font-size:0.875rem; color:var(--white); font-weight:500;">M.S. Computer Science — Georgia Institute of Technology, 2024</div>
+            <div style="font-size:0.8rem; color:var(--light); font-weight:300; margin-top:0.2rem;">AI, NLP, Human-Computer Interaction, Cognitive Science</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:3px 1fr; gap:1rem; align-items:start;">
+          <div style="background:var(--accent); min-height:44px;"></div>
+          <div>
+            <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem;">Industry</div>
+            <div style="font-size:0.875rem; color:var(--white); font-weight:500;">President & COO — Saratoga Spring Water Co., 2005–2021</div>
+            <div style="font-size:0.8rem; color:var(--light); font-weight:300; margin-top:0.2rem;">Led Sales, Marketing, Engineering, QA & Operations at scale</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:3px 1fr; gap:1rem; align-items:start;">
+          <div style="background:var(--accent); min-height:44px;"></div>
+          <div>
+            <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem;">Engineering</div>
+            <div style="font-size:0.875rem; color:var(--white); font-weight:500;">Senior Software Engineer — Lockheed Martin, 1999–2004</div>
+            <div style="font-size:0.8rem; color:var(--light); font-weight:300; margin-top:0.2rem;">R&D, system design, simulation & modeling, complex security systems</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-        <img src="icon - comprehensive library.webp" height="1024" width="1024"/>
-        <h3>Comprehensive Course Library</h3>
-        <!--p>An extensive and ever-growing library of personal improvement and life-enhancing courses.</p-->
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">Services</p>
+        <h2 class="section-title">WHAT WE BUILD</h2>
+      </div>
+      <p class="section-body" style="max-width:360px; font-size:0.875rem;">
+        Focused offerings built around the problems SMBs actually face with AI and modern technology.
+      </p>
     </div>
-    <div class="feature">
-        <img src="icon - seamless integration.webp" height="1024" width="1024"/>
-        <h3>Learn from Anywhere, Anytime.</h3>
-        <!--p>Access from anywhere with your web browser or mobile device.</p-->
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-name">AI WORKFLOW AUTOMATION</div>
+        <p class="service-desc">Connect large language models to the tools your team already uses — CRMs, messaging platforms, email, and internal systems. We build integrations that reduce manual work and surface the right information at the right time.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-name">CUSTOM AI AGENTS & CHATBOTS</div>
+        <p class="service-desc">Purpose-built AI assistants trained on your products, processes, and documentation. Far beyond generic chatbots — these are operational tools that understand your business and work for your specific team.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-name">MOBILE APP DEVELOPMENT</div>
+        <p class="service-desc">Cross-platform mobile applications built with React Native and Expo. From MVP to production-ready, we build apps that are fast, reliable, and connected to the backend systems your operations depend on.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-name">AI AUDIT & ROADMAP</div>
+        <p class="service-desc">A focused engagement to assess your current operations and identify where AI and automation can deliver the most value. You walk away with a concrete, prioritized implementation plan — not a slide deck full of theory.</p>
+      </div>
     </div>
-    <div class="feature">
-        <img src="icon - collaboration.webp" height="1024" width="1024"/>
-        <h3>Community & Collaboration</h3>
-        <!--p>Join a robust community of learners and educators to collaborate, share knowledge, and support each other on your learning journeys.</p-->
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="work-header reveal">
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-title">PROJECTS</h2>
     </div>
-    <div class="feature">
-        <img src="icon - data driven insights.webp" height="1024" width="1024"/>
-        <h3>Data-driven Insights</h3>
-        <!--p>Adaptable learning that utilizes data-driven insights to maximize learning outcomes.</p-->
+    <div class="projects-list">
+      <div class="project-item reveal">
+        <div class="project-index">01</div>
+        <div class="project-content">
+          <div class="project-title">AI SALES DOCUMENTATION — WHATSAPP INTEGRATION</div>
+          <p class="project-desc">Built an AI-powered chatbot integrated directly into WhatsApp to automate sales call documentation for a client's sales team. The system captures, structures, and routes conversation data — eliminating manual data entry and keeping CRM records accurate in real time.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag">AI Integration</span>
+          <span class="tag">WhatsApp API</span>
+          <span class="tag">LLM</span>
+        </div>
+      </div>
+      <div class="project-item reveal">
+        <div class="project-index">02</div>
+        <div class="project-content">
+          <div class="project-title">RECYCLING INITIATIVE MOBILE APP</div>
+          <p class="project-desc">Designed and developed a cross-platform mobile application supporting a community recycling program. Built on React Native and Expo with a Supabase backend, the app handles user authentication, location-based features, and real-time data tracking for program administrators.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">Supabase</span>
+        </div>
+      </div>
+      <div class="project-item reveal">
+        <div class="project-index">03</div>
+        <div class="project-content">
+          <div class="project-title">VISTA — ALGORITHMIC PORTFOLIO PLATFORM</div>
+          <p class="project-desc">Engineered a multi-asset ETF algorithmic trading system currently in paper-trading operation. VISTA features a regime detection engine, volatility risk premium modeling, and a clean Python-based workflow integrating with ThinkorSwim for live market data and eventual Schwab API execution.</p>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Algorithmic Trading</span>
+          <span class="tag">FinTech</span>
+        </div>
+      </div>
     </div>
-</section>
-</body>
-</html>
+  </section>
+
+
+  <!-- RESEARCH & CREDENTIALS -->
+  <section id="research" style="background:var(--black); padding:7rem 4rem;">
+    <div class="reveal" style="margin-bottom:4rem; border-bottom:1px solid #1a1a1a; padding-bottom:2rem; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <p class="section-label">Background</p>
+        <h2 class="section-title">RESEARCH &<br>CREDENTIALS</h2>
+      </div>
+      <p class="section-body" style="max-width:360px; font-size:0.875rem;">
+        Academic research, published work, and specialized development projects that inform the consulting practice.
+      </p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#1a1a1a;">
+      <div class="reveal" style="background:var(--black); padding:3rem;">
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem;">Georgia Tech Research, 2024</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.8rem;">HELENA — Conversational AI Agent</div>
+        <p style="font-size:0.875rem; font-weight:300; color:var(--light); line-height:1.7;">Designed and researched an AI-powered conversational agent promoting holistic learning through embodied health and nutrition interactions. Built using NLP and personalized learning methodologies.</p>
+      </div>
+      <div class="reveal" style="background:var(--black); padding:3rem;">
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem;">Georgia Tech Research, 2022</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.8rem;">Consciousness & Proprioception</div>
+        <p style="font-size:0.875rem; font-weight:300; color:var(--light); line-height:1.7;">Co-authored a cognitive science paper exploring proprioception and peripersonal space, arguing for a functionalist perspective where bodily interactions dynamically shape conscious experience.</p>
+      </div>
+      <div class="reveal" style="background:var(--black); padding:3rem;">
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem;">Personal R&D</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.8rem;">LLM Intelligent Study Partner</div>
+        <p style="font-size:0.875rem; font-weight:300; color:var(--light); line-height:1.7;">Built an AI tutoring system using LLMs to dynamically assess student understanding and adapt instruction in real time. Implemented in Python using the OpenAI API and LangChain.</p>
+      </div>
+      <div class="reveal" style="background:var(--black); padding:3rem;">
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem;">Personal R&D</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:0.04em; color:var(--white); margin-bottom:0.8rem;">EverGuide.AI — Adaptive Courses</div>
+        <p style="font-size:0.875rem; font-weight:300; color:var(--light); line-height:1.7;">Designed and built adaptive conversational courses across longevity, fiction writing, environmental mindfulness, and personal development — combining instructional design with conversational AI.</p>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:1px; background:#0d0d0d; padding:2.5rem 3rem; display:flex; gap:4rem; align-items:center; flex-wrap:wrap;">
+      <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--light);">Certifications</div>
+      <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+        <span style="font-size:0.8rem; color:var(--white); font-weight:300;">Mathematics for ML — Imperial College London</span>
+        <span style="color:#333;">|</span>
+        <span style="font-size:0.8rem; color:var(--white); font-weight:300;">Deep Learning Specialization — deeplearning.ai</span>
+        <span style="color:#333;">|</span>
+        <span style="font-size:0.8rem; color:var(--white); font-weight:300;">B.S. Computer Science — Siena College (AI & Expert Systems)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-left reveal">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">LET'S BUILD<br><span>SOMETHING.</span></h2>
+      <p class="section-body">
+        Have an interesting problem that needs an AI or technology solution? We're selective about the work we take on — which means every project gets real attention.
+      </p>
+      <div class="contact-detail">
+        <div class="contact-line">
+          <strong>Email</strong>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb5b8b1b1b29dadb1bca9bbb2afb0beb2b3aea8b1a9b4b3baf3b4b2">[email&#160;protected]</a></span>
+        </div>
+        <div class="contact-line">
+          <strong>Based</strong>
+          <span>Albuquerque, NM // Queensbury, NY — working remotely nationwide</span>
+        </div>
+        <div class="contact-line">
+          <strong>Focus</strong>
+          <span>AI integration, mobile apps, algorithmic systems</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@company.com" />
+        </div>
+        <div class="form-group">
+          <label>Project Type</label>
+          <select>
+            <option value="" disabled selected>Select a service...</option>
+            <option>AI Workflow Automation</option>
+            <option>Custom AI Agent / Chatbot</option>
+            <option>Mobile App Development</option>
+            <option>AI Audit &amp; Roadmap</option>
+            <option>Other / Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Project</label>
+          <textarea placeholder="What problem are you trying to solve? What does success look like?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; text-align:center;">Send Message →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>P</span>LATFORM CONSULTING</div>
+    <div class="footer-copy">© 2026 Platform Consulting. All rights reserved.</div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Form submit placeholder
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Mes
